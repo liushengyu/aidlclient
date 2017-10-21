@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aidlclient"
+    android:versionCode="1"
+    android:versionName="1.0" android:installLocation="internalOnly">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.aidlclient.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.aidlclient.SmsActivity"
+            android:theme="@android:style/Theme.Dialog"
+            />
+        <activity
+            android:name="com.example.aidlclient.VedioActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name="com.example.aidlclient.NetActivity"
+            />
+        <activity
+            android:name="com.example.aidlclient.PicActivity"
+            />
+        <receiver
+            android:name="com.example.aidlclient.SmsReciver"
+            >
+            <intent-filter android:priority="800">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+                </intent-filter>
+            </receiver>
+            <receiver
+                android:name="com.example.aidlclient.DeskCirl">
+                <intent-filter>
+                    <action 
+                        android:name="android.appwidget.action.APPWIDGET_UPDATE"
+                        />
+                </intent-filter>
+                <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/cir_provider"
+                    />
+                
+            </receiver>
+                
+    </application>
+
+</manifest>

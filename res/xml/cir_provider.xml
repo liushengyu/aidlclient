@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    android:minWidth="50dip"
+    android:minHeight="50dip"
+    android:updatePeriodMillis="1000"
+    android:initialLayout="@layout/cirview"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>

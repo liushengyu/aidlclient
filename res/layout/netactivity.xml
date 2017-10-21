@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ImageView 
+        android:layout_height="wrap_content"
+        android:id="@+id/netimg"
+        android:layout_width="match_parent"/>
+    <Button 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="download"
+        android:id="@+id/download"
+        
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:max="100"
+        />
+    
+</LinearLayout>

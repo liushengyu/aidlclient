@@ -35,10 +35,6 @@
             android:theme="@android:style/Theme.Dialog"
             />
         <activity
-            android:name="com.example.aidlclient.DialogActivity"
-            android:theme="@android:style/Theme.Dialog"
-            />
-        <activity
             android:name="com.example.aidlclient.VedioActivity"
             android:screenOrientation="landscape"
             />

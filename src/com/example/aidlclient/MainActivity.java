@@ -9,7 +9,6 @@ import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
-import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -53,6 +52,7 @@ public class MainActivity extends Activity {
 	private Button record;
 	private Button stoprecord;
 	private Button alert;
+	private Button alertdialog;
 	private ServiceConnection sc=new ServiceConnection() {
 		
 		@Override
@@ -93,6 +93,23 @@ public class MainActivity extends Activity {
 		start=(Button )findViewById(R.id.start);
 		record=(Button )findViewById(R.id.recorder);
 		stoprecord=(Button)findViewById(R.id.stoprecord);
+		alertdialog=(Button)findViewById(R.id.alterdialog);
+		
+		alertdialog.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				
+				new AlertDialog.Builder(MainActivity.this).
+				setMessage("message").setTitle("title").setPositiveButton("positive", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface arg0, int arg1) {
+						
+					}
+				}).show();
+			}
+		});
 		
 		alert=(Button)findViewById(R.id.alert);
 		
@@ -115,7 +132,7 @@ public class MainActivity extends Activity {
 						
 					}
 				}).show(); */
-				Intent in=new Intent(MainActivity.this,PicActivity.class);
+				Intent in=new Intent(MainActivity.this,DialogActivity.class);
 				startActivity(in);
 			}
 			
@@ -347,6 +364,11 @@ public class MainActivity extends Activity {
 		unbindService(sc);
 	}
 	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		System.out.println("mainactivity onpause");
+	}
 	
 	@Override
 	protected void onStart() {

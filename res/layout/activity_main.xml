@@ -74,7 +74,12 @@
         android:text="alert"
         android:id="@+id/alert"
         />
-    
+    <Button 
+        android:id="@+id/alterdialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="alertdialog"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dip"
